@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Joseph — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">JJ</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#docs">Docs</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <!-- Edit the name and tagline below -->
+            <h1 class="hero-name">Jordan Joseph</h1>
+            <p class="hero-tagline">Aspiring DevOps Engineer</p>
+            <p class="hero-description">
+                I'm currently learning the tools and practices that go into DevOps
+                and cloud engineering. This portfolio is where I document what I pick
+                up along the way, starting with AWS.
+            </p>
+            <div class="hero-badges">
+                <span class="badge">AWS</span>
+                <span class="badge">EKS</span>
+                <span class="badge">Networking</span>
+                <span class="badge">IAM</span>
+                <span class="badge">VPC</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#docs" class="btn-primary">View My Docs</a>
+                <a href="CV/Jordan_Joseph_CV.pdf" download class="btn-secondary">Download CV</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> aws sts get-caller-identity</p>
+                    <p class="output">&#123;</p>
+                    <p class="output">&nbsp;&nbsp;"UserId": "jordan.joseph",</p>
+                    <p class="output">&nbsp;&nbsp;"Account": "123456789012",</p>
+                    <p class="output">&nbsp;&nbsp;"Arn": "arn:aws:iam::..."</p>
+                    <p class="output">&#125;</p>
+                    <p><span class="prompt">$</span> kubectl get nodes</p>
+                    <p class="output">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;ROLES</p>
+                    <p class="output">ip-10-0-1-12&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&#60;none&#62;</p>
+                    <p class="output">ip-10-0-2-47&nbsp;&nbsp;Ready&nbsp;&nbsp;&nbsp;&#60;none&#62;</p>
+                    <p><span class="prompt">$</span> <span class="cursor">&#9608;</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs-section" id="docs">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <p class="section-subtitle">Technical write-ups from my AWS learning journey</p>
+
+            <div class="filter-dropdown" id="filter-dropdown">
+                <button class="filter-trigger" id="filter-trigger" aria-expanded="false" aria-haspopup="listbox">
+                    <span id="filter-label">All Categories</span>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <ul class="filter-menu" id="filter-menu" role="listbox" hidden>
+                    <li><button class="filter-option active" data-filter="all" data-label="All Categories">All <span class="count">14</span></button></li>
+                    <li><button class="filter-option" data-filter="compute" data-label="Compute">Compute <span class="count">3</span></button></li>
+                    <li><button class="filter-option" data-filter="networking" data-label="Networking">Networking <span class="count">9</span></button></li>
+                    <li><button class="filter-option" data-filter="security" data-label="Security">Security <span class="count">1</span></button></li>
+                    <li><button class="filter-option" data-filter="storage" data-label="Storage">Storage <span class="count">1</span></button></li>
+                </ul>
+            </div>
+
+            <div class="docs-groups" id="docs-grid">
+
+                <!-- COMPUTE -->
+                <div class="doc-group" data-category="compute">
+                    <div class="group-header">
+                        <span class="group-label compute">Compute</span>
+                        <span class="group-count">3 docs</span>
+                    </div>
+                    <div class="group-list">
+                        <a href="AWS/aws-compute-eks1.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Amazon EKS — Part 1</span>
+                                <span class="doc-row-desc">Used eksctl to launch an EKS cluster on EC2; CloudFormation auto-provisioned the VPC, IAM roles, and node group; fixed IAM permission errors and tested Kubernetes self-healing by deleting nodes.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-compute-eks2.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Amazon EKS — Part 2</span>
+                                <span class="doc-row-desc">Cloned a Flask app from GitHub, built a Docker image (fixing a Docker group permissions error along the way), and pushed it to Amazon ECR ready for deployment.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-compute-eks3.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Amazon EKS — Part 3</span>
+                                <span class="doc-row-desc">Wrote Deployment and Service YAML manifests for the Flask app, applied them with kubectl, and explored how Kubernetes maintains desired replica state through self-healing.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NETWORKING -->
+                <div class="doc-group" data-category="networking">
+                    <div class="group-header">
+                        <span class="group-label networking">Networking</span>
+                        <span class="group-count">9 docs</span>
+                    </div>
+                    <div class="group-list">
+                        <a href="AWS/aws-networks-vpc.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Virtual Private Cloud (VPC)</span>
+                                <span class="doc-row-desc">Built a VPC from scratch with a custom IPv4 CIDR block, a public subnet, and an internet gateway; compared the AWS Console to CloudShell for creating the same resources.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-connectivity.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">VPC Connectivity</span>
+                                <span class="doc-row-desc">Connected to EC2 instances via Instance Connect, fixed a missing SSH inbound rule, and confirmed instance-to-instance ping by adding an ICMP security group rule.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-ec2.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">EC2 Networking</span>
+                                <span class="doc-row-desc">Built a full VPC with public and private EC2 instances; configured route tables, security groups, and key pairs; then rebuilt everything in one step using the VPC wizard.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-endpoints.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">VPC Endpoints</span>
+                                <span class="doc-row-desc">Created an S3 Gateway endpoint so an EC2 instance accesses S3 privately; applied a bucket policy restricting access to endpoint traffic only, and updated the VPC route table to use it.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-monitoring.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Network Monitoring</span>
+                                <span class="doc-row-desc">Enabled VPC Flow Logs to CloudWatch with a custom IAM role, peered two VPCs and fixed the route tables, then used Log Insights to query bytes transferred between instances.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-peering.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">VPC Peering</span>
+                                <span class="doc-row-desc">Created a peering connection between two VPCs with non-overlapping CIDRs, updated both route tables, and confirmed cross-VPC ping after assigning an Elastic IP and fixing an ICMP rule.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-private.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Private Networking</span>
+                                <span class="doc-row-desc">Created a private subnet alongside a public one, attached a dedicated route table with no internet route, and configured a custom network ACL to deny all inbound and outbound traffic.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-s3.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">S3 Networking</span>
+                                <span class="doc-row-desc">Launched a VPC and EC2 instance, configured AWS credentials with aws configure, and used the CLI to list bucket contents and upload a file to S3.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                        <a href="AWS/aws-networks-security.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Network Security</span>
+                                <span class="doc-row-desc">Configured route tables, security groups, and network ACLs inside a VPC; contrasted default vs custom ACL behaviour; and used EC2 Global View to audit resources across multiple regions.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SECURITY -->
+                <div class="doc-group" data-category="security">
+                    <div class="group-header">
+                        <span class="group-label security">Security</span>
+                        <span class="group-count">1 doc</span>
+                    </div>
+                    <div class="group-list">
+                        <a href="AWS/aws-security-iam.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">IAM — Identity &amp; Access Management</span>
+                                <span class="doc-row-desc">Wrote a JSON IAM policy scoping EC2 access to development-tagged instances, assigned it via a user group, and used the IAM Policy Simulator to confirm production actions were correctly denied.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- STORAGE -->
+                <div class="doc-group" data-category="storage">
+                    <div class="group-header">
+                        <span class="group-label storage">Storage</span>
+                        <span class="group-count">1 doc</span>
+                    </div>
+                    <div class="group-list">
+                        <a href="AWS/aws-host-a-website-on-s3.pdf" target="_blank" class="doc-row">
+                            <div class="doc-row-body">
+                                <span class="doc-row-title">Host a Static Website on S3</span>
+                                <span class="doc-row-desc">Created an S3 bucket in eu-west-2, enabled static website hosting, fixed a 403 error by making files public via ACLs, and added a bucket policy to prevent the index file from being deleted.</span>
+                            </div>
+                            <span class="doc-row-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Open to cloud engineering roles and collaborations.</p>
+
+            <div class="contact-card">
+                <form
+                    id="contact-form"
+                    action="https://formspree.io/f/mgojnwjz"
+                    method="POST"
+                >
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+
+                <div id="form-success" class="form-feedback success" hidden>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                    <div>
+                        <strong>Message sent!</strong>
+                        <p>Thanks for reaching out — I'll get back to you soon.</p>
+                    </div>
+                </div>
+
+                <div id="form-error" class="form-feedback error" hidden>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                    <div>
+                        <strong>Something went wrong.</strong>
+                        <p>Try emailing directly at <a href="mailto:jjoseph1608@outlook.com">jjoseph1608@outlook.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>Built by Jordan Joseph &mdash; <span id="year"></span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
