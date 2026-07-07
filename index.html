@@ -15,7 +15,7 @@
             <a href="#" class="nav-logo">JJ</a>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#docs">Docs</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <span class="badge">VPC</span>
             </div>
             <div class="hero-actions">
-                <a href="#docs" class="btn-primary">View My Docs</a>
+                <a href="#projects" class="btn-primary">View My Projects</a>
                 <a href="CV/Jordan_Joseph_CV.pdf" download class="btn-secondary">Download CV</a>
             </div>
         </div>
@@ -68,164 +68,34 @@
         </div>
     </section>
 
-    <section class="docs-section" id="docs">
+    <section class="projects-section" id="projects">
         <div class="container">
-            <h2 class="section-title">Documentation</h2>
-            <p class="section-subtitle">Technical write-ups from my AWS learning journey</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">What I've been building</p>
 
-            <div class="filter-dropdown" id="filter-dropdown">
-                <button class="filter-trigger" id="filter-trigger" aria-expanded="false" aria-haspopup="listbox">
-                    <span id="filter-label">All Categories</span>
-                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-                </button>
-                <ul class="filter-menu" id="filter-menu" role="listbox" hidden>
-                    <li><button class="filter-option active" data-filter="all" data-label="All Categories">All <span class="count">14</span></button></li>
-                    <li><button class="filter-option" data-filter="compute" data-label="Compute">Compute <span class="count">3</span></button></li>
-                    <li><button class="filter-option" data-filter="networking" data-label="Networking">Networking <span class="count">9</span></button></li>
-                    <li><button class="filter-option" data-filter="security" data-label="Security">Security <span class="count">1</span></button></li>
-                    <li><button class="filter-option" data-filter="storage" data-label="Storage">Storage <span class="count">1</span></button></li>
-                </ul>
-            </div>
+            <div class="projects-grid">
 
-            <div class="docs-groups" id="docs-grid">
-
-                <!-- COMPUTE -->
-                <div class="doc-group" data-category="compute">
-                    <div class="group-header">
-                        <span class="group-label compute">Compute</span>
-                        <span class="group-count">3 docs</span>
+                <!-- terraform-vpc-project -->
+                <a href="https://github.com/jordanjoseph95/terraform-vpc-project"
+                   target="_blank" rel="noopener" class="project-card">
+                    <div class="project-card-top">
+                        <svg class="repo-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z"/>
+                        </svg>
+                        <span class="project-name">terraform-vpc-project</span>
                     </div>
-                    <div class="group-list">
-                        <a href="AWS/aws-compute-eks1.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Amazon EKS — Part 1</span>
-                                <span class="doc-row-desc">Used eksctl to launch an EKS cluster on EC2; CloudFormation auto-provisioned the VPC, IAM roles, and node group; fixed IAM permission errors and tested Kubernetes self-healing by deleting nodes.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-compute-eks2.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Amazon EKS — Part 2</span>
-                                <span class="doc-row-desc">Cloned a Flask app from GitHub, built a Docker image (fixing a Docker group permissions error along the way), and pushed it to Amazon ECR ready for deployment.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-compute-eks3.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Amazon EKS — Part 3</span>
-                                <span class="doc-row-desc">Wrote Deployment and Service YAML manifests for the Flask app, applied them with kubectl, and explored how Kubernetes maintains desired replica state through self-healing.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
+                    <p class="project-desc">AWS VPC built with Terraform, covering subnets, routing, and a basic web server deployment.</p>
+                    <div class="project-card-footer">
+                        <span class="project-lang">
+                            <span class="lang-dot" style="background:#844FBA"></span>
+                            HCL
+                        </span>
+                        <span class="project-gh-link">
+                            View on GitHub
+                            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z"/></svg>
+                        </span>
                     </div>
-                </div>
-
-                <!-- NETWORKING -->
-                <div class="doc-group" data-category="networking">
-                    <div class="group-header">
-                        <span class="group-label networking">Networking</span>
-                        <span class="group-count">9 docs</span>
-                    </div>
-                    <div class="group-list">
-                        <a href="AWS/aws-networks-vpc.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Virtual Private Cloud (VPC)</span>
-                                <span class="doc-row-desc">Built a VPC from scratch with a custom IPv4 CIDR block, a public subnet, and an internet gateway; compared the AWS Console to CloudShell for creating the same resources.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-connectivity.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">VPC Connectivity</span>
-                                <span class="doc-row-desc">Connected to EC2 instances via Instance Connect, fixed a missing SSH inbound rule, and confirmed instance-to-instance ping by adding an ICMP security group rule.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-ec2.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">EC2 Networking</span>
-                                <span class="doc-row-desc">Built a full VPC with public and private EC2 instances; configured route tables, security groups, and key pairs; then rebuilt everything in one step using the VPC wizard.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-endpoints.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">VPC Endpoints</span>
-                                <span class="doc-row-desc">Created an S3 Gateway endpoint so an EC2 instance accesses S3 privately; applied a bucket policy restricting access to endpoint traffic only, and updated the VPC route table to use it.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-monitoring.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Network Monitoring</span>
-                                <span class="doc-row-desc">Enabled VPC Flow Logs to CloudWatch with a custom IAM role, peered two VPCs and fixed the route tables, then used Log Insights to query bytes transferred between instances.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-peering.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">VPC Peering</span>
-                                <span class="doc-row-desc">Created a peering connection between two VPCs with non-overlapping CIDRs, updated both route tables, and confirmed cross-VPC ping after assigning an Elastic IP and fixing an ICMP rule.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-private.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Private Networking</span>
-                                <span class="doc-row-desc">Created a private subnet alongside a public one, attached a dedicated route table with no internet route, and configured a custom network ACL to deny all inbound and outbound traffic.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-s3.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">S3 Networking</span>
-                                <span class="doc-row-desc">Launched a VPC and EC2 instance, configured AWS credentials with aws configure, and used the CLI to list bucket contents and upload a file to S3.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                        <a href="AWS/aws-networks-security.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Network Security</span>
-                                <span class="doc-row-desc">Configured route tables, security groups, and network ACLs inside a VPC; contrasted default vs custom ACL behaviour; and used EC2 Global View to audit resources across multiple regions.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- SECURITY -->
-                <div class="doc-group" data-category="security">
-                    <div class="group-header">
-                        <span class="group-label security">Security</span>
-                        <span class="group-count">1 doc</span>
-                    </div>
-                    <div class="group-list">
-                        <a href="AWS/aws-security-iam.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">IAM — Identity &amp; Access Management</span>
-                                <span class="doc-row-desc">Wrote a JSON IAM policy scoping EC2 access to development-tagged instances, assigned it via a user group, and used the IAM Policy Simulator to confirm production actions were correctly denied.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- STORAGE -->
-                <div class="doc-group" data-category="storage">
-                    <div class="group-header">
-                        <span class="group-label storage">Storage</span>
-                        <span class="group-count">1 doc</span>
-                    </div>
-                    <div class="group-list">
-                        <a href="AWS/aws-host-a-website-on-s3.pdf" target="_blank" class="doc-row">
-                            <div class="doc-row-body">
-                                <span class="doc-row-title">Host a Static Website on S3</span>
-                                <span class="doc-row-desc">Created an S3 bucket in eu-west-2, enabled static website hosting, fixed a 403 error by making files public via ACLs, and added a bucket policy to prevent the index file from being deleted.</span>
-                            </div>
-                            <span class="doc-row-arrow">→</span>
-                        </a>
-                    </div>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -254,7 +124,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Let's connect!" required></textarea>
                     </div>
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>

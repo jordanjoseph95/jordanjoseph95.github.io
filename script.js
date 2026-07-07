@@ -33,43 +33,7 @@ if (contactForm) {
     });
 }
 
-// Category filter dropdown
-const trigger = document.getElementById('filter-trigger');
-const menu = document.getElementById('filter-menu');
-const filterLabel = document.getElementById('filter-label');
-const options = document.querySelectorAll('.filter-option');
-const groups = document.querySelectorAll('.doc-group');
-
-trigger.addEventListener('click', () => {
-    const open = trigger.getAttribute('aria-expanded') === 'true';
-    trigger.setAttribute('aria-expanded', String(!open));
-    menu.hidden = open;
-});
-
-options.forEach(option => {
-    option.addEventListener('click', () => {
-        options.forEach(o => o.classList.remove('active'));
-        option.classList.add('active');
-        filterLabel.textContent = option.dataset.label;
-
-        const filter = option.dataset.filter;
-        groups.forEach(group => {
-            group.hidden = filter !== 'all' && group.dataset.category !== filter;
-        });
-
-        menu.hidden = true;
-        trigger.setAttribute('aria-expanded', 'false');
-    });
-});
-
-document.addEventListener('click', (e) => {
-    if (!trigger.contains(e.target) && !menu.contains(e.target)) {
-        menu.hidden = true;
-        trigger.setAttribute('aria-expanded', 'false');
-    }
-});
-
-// Fade-in groups on scroll
+// Fade-in project cards on scroll
 const observer = new IntersectionObserver(
     entries => entries.forEach(e => {
         if (e.isIntersecting) {
@@ -80,9 +44,9 @@ const observer = new IntersectionObserver(
     { threshold: 0.05 }
 );
 
-groups.forEach((group, i) => {
-    group.style.opacity = '0';
-    group.style.transform = 'translateY(16px)';
-    group.style.transition = `opacity 0.4s ease ${i * 80}ms, transform 0.4s ease ${i * 80}ms`;
-    observer.observe(group);
+document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(16px)';
+    card.style.transition = `opacity 0.4s ease ${i * 80}ms, transform 0.4s ease ${i * 80}ms`;
+    observer.observe(card);
 });
